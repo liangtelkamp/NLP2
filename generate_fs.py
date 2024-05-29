@@ -13,7 +13,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 # from numba import cuda
 import argparse
 
-# --access_token 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 --total_samples_per_item 100 --max_batch_size 10 --max_length_increment 5 --base --model google/gemma-2b-it --k 5 --seed 42 --split 45 --DT '' --top_k 50 --top_p 0.95
+# --access_token TOKEN --total_samples_per_item 100 --max_batch_size 10 --max_length_increment 5 --base --model google/gemma-2b-it --k 5 --seed 42 --split 45 --DT '' --top_k 50 --top_p 0.95
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Process some integers.")
