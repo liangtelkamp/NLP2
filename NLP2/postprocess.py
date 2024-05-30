@@ -1,6 +1,9 @@
 import json
 import re
 from utils import *
+# Path
+import sys
+sys.append.path('/Users/liangtelkamp/Documents/GitHub/NLP2/FS')
 
 def load_json(file_path):
     """Utility function to load a JSON file."""
@@ -51,8 +54,8 @@ def ensemble_dict(base_results, file_path, variant):
         base_results[key][variant] = new_results[key][variant]
 
 # Load base and fs JSON files
-BASE_PATH = 'test_base.json'
-FS_PATH = 'test_fs.json'
+BASE_PATH = '/results/test_base.json'
+FS_PATH = '/results/test_fs.json'
 test_baseline = load_json(BASE_PATH)
 test_fs = load_json(FS_PATH)
 
@@ -63,13 +66,16 @@ for key, value in test_baseline.items():
 save_json(test_baseline, BASE_PATH)
 
 # Ensemble different results
-BASE_PATH = 'prompt_results/test_base.json'
+BASE_PATH = '/results/test_base.json'
 FS_PATHS = {
-    'fs_k_3': 'prompt_results/test_fs_k_3.json',
-    'fs_k_5': 'prompt_results/test_fs_k_5.json',
-    'fs_k_7': 'prompt_results/test_fs_k_7.json',
-    'fs_k_5_DT': 'prompt_results/test_fs_k_5_DT.json',
-    'fs_k_5_without_DT': 'prompt_results/test_fs_k_5_without_DT.json'
+    'fs_k_3': 'results/test_fs_k_3.json',
+    'fs_k_5': 'results/test_fs_k_5.json',
+    'fs_k_5': 'results/test_fs_k_5_20.json',
+    'fs_k_5': 'results/test_fs_k_5_30.json',
+    'fs_k_5': 'results/test_fs_k_5_40.json',
+    'fs_k_7': 'results/test_fs_k_7.json',
+    'fs_k_5_DT': 'results/test_fs_k_5_DT.json',
+    'fs_k_5_without_DT': 'results/test_fs_k_5_without_DT.json'
 }
 results = load_json(BASE_PATH)
 
@@ -83,4 +89,4 @@ for key, value in results.items():
 processed_results = results
 
 # Save the complete results
-save_json(processed_results, 'prompt_results/results_complete.json')
+save_json(processed_results, 'results/results_complete.json')
