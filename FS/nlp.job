@@ -14,9 +14,9 @@ module load Anaconda3/2022.05
 
 source activate nlp2
 
-cd liang/NLP2/
+cd NLP2/FS/
 
-TOKEN=GIT_ACCESS_TOKEN
+TOKEN=HUGGING_FACE-ACCESS-TOKEN
 
 CUDA_VISIBLE_DEVICES=$DEVICES srun python -u generate_fs.py \
 --access_token $TOKEN --total_samples_per_item 40 --max_batch_size 16 --max_length_increment 5 --base --model google/gemma-2b-it --k 5 --seed 42 --split 45 --DT '' --top_k 30 --top_p 0.95
