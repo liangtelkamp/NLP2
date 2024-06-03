@@ -1,5 +1,8 @@
 # NLP2
-
+1. The different experiments (ft_s, ft_l, ft_lmhead and rq3) are included in their respective results folder
+2. All json result files can be found in the ```results``` folder.
+3. Visualisation of these restults can be made with ```visualisations.ipynb```
+   
 ## Fine-tuning
 
 ## Few-shot (FS) learning
